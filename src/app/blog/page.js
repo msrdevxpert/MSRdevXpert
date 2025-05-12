@@ -1,67 +1,54 @@
-'use client';
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 
-const BlogEditor = () => {
-  const [blogs, setBlogs] = useState([]);
-  const [sha, setSha] = useState('');
-  const [newBlog, setNewBlog] = useState({ title: '', content: '', image: '', slug: '' });
+const Blog = () => {
+    return (
+        <section className="blog-section">
+        {/* Background Blob */}
+      <div className="orange-ball"></div>
+            <div className="blog-container">
+                <h1 className="gradient-title"><span>Latest</span> Blog</h1>
+                <p className="section-subtitle">Insights, updates & development tips from our team</p>
 
-  useEffect(() => {
-    const fetchBlogs = async () => {
-      const res = await fetch('/api/getBlogs');
-      const data = await res.json();
+                <div className="blog-grid">
+                    <div className="blog-card">
+                        <img src="/blog1.jpg" alt="React Development" />
+                        <div className="blog-content">
+                            <h3>Why React is Our Go-To for Frontend Development</h3>
+                            <p>From modular components to lightning-fast performance, explore why React helps us deliver dynamic user experiences.</p>
+                            <a href="/blog/react-frontend">Read More →</a>
+                        </div>
+                    </div>
 
-      const ghMetaRes = await fetch(`https://api.github.com/repos/Subho808/msrdevXpert_next/contents/data/blogs.json`, {
-        headers: { Authorization: `Bearer ${process.env.NEXT_PUBLIC_GITHUB_TOKEN}` },
-      });
-      const meta = await ghMetaRes.json();
-      setSha(meta.sha);
+                    <div className="blog-card">
+                        <img src="/blog2.jpg" alt="Spring Boot" />
+                        <div className="blog-content">
+                            <h3>Backend Brilliance with Spring Boot</h3>
+                            <p>We break down how Spring Boot helps us build reliable, scalable, and secure APIs for our clients.</p>
+                            <a href="/blog/spring-boot">Read More →</a>
+                        </div>
+                    </div>
 
-      setBlogs(data);
-    };
-    fetchBlogs();
-  }, []);
+                    <div className="blog-card">
+                        <img src="/blog3.jpg" alt="Cloud Hosting" />
+                        <div className="blog-content">
+                            <h3>Choosing the Right Cloud & Hosting Strategy</h3>
+                            <p>Understand the pros and cons of AWS, DigitalOcean, and shared hosting—and how we choose what's best for your app.</p>
+                            <a href="/blog/cloud-hosting">Read More →</a>
+                        </div>
+                    </div>
 
-  const handleChange = (e) => setNewBlog({ ...newBlog, [e.target.name]: e.target.value });
-
-  const addBlog = () => {
-    const updatedBlogs = [...blogs, { ...newBlog, id: Date.now() }];
-    setBlogs(updatedBlogs);
-    setNewBlog({ title: '', content: '', image: '', slug: '' });
-  };
-
-  const saveBlogs = async () => {
-    const res = await fetch('/api/updateBlogs', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ content: blogs, sha }),
-    });
-
-    const result = await res.json();
-    if (result.success) alert('Blogs updated on GitHub!');
-    else alert('Failed to update.');
-  };
-
-  return (
-    <div>
-      <h1>Manage Blogs</h1>
-      <input type="text" name="title" value={newBlog.title} onChange={handleChange} placeholder="Title" />
-      <input type="text" name="slug" value={newBlog.slug} onChange={handleChange} placeholder="Slug" />
-      <input type="text" name="image" value={newBlog.image} onChange={handleChange} placeholder="Image URL" />
-      <textarea name="content" value={newBlog.content} onChange={handleChange} placeholder="Content"></textarea>
-      <button onClick={addBlog}>Add</button>
-      <button onClick={saveBlogs}>Save to GitHub</button>
-
-      <div style={{ marginTop: '2rem' }}>
-        {blogs.map((blog) => (
-          <div key={blog.id}>
-            <h3>{blog.title}</h3>
-            <p>{blog.content}</p>
-          </div>
-        ))}
-      </div>
-    </div>
-  );
+                    <div className="blog-card">
+                        <img src="/blog4.jpg" alt="DevOps" />
+                        <div className="blog-content">
+                            <h3>DevOps in Action: CI/CD & Server Monitoring</h3>
+                            <p>See how we implement continuous deployment pipelines and proactive monitoring to keep applications healthy and fast.</p>
+                            <a href="/blog/devops-strategy">Read More →</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    );
 };
 
-export default BlogEditor;
+export default Blog;
