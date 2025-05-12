@@ -11,7 +11,7 @@ const BlogEditor = () => {
       const res = await fetch('/api/getBlogs');
       const data = await res.json();
 
-      const ghMetaRes = await fetch(`https://api.github.com/repos/your-username/your-repo/contents/data/blogs.json`, {
+      const ghMetaRes = await fetch(`https://api.github.com/repos/Subho808/msrdevXpert_next/contents/data/blogs.json`, {
         headers: { Authorization: `Bearer ${process.env.NEXT_PUBLIC_GITHUB_TOKEN}` },
       });
       const meta = await ghMetaRes.json();

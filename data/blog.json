@@ -1,0 +1,24 @@
+[
+    {
+      "id": 1,
+      "title": "Why React is Our Go-To for Frontend Development",
+      "slug": "react-frontend",
+      "content": "From modular components to lightning-fast performance, explore why React helps us deliver dynamic user experiences.",
+      "image": "/blog1.jpg"
+    },
+    {
+      "id": 2,
+      "title": "Backend Brilliance with Spring Boot",
+      "slug": "spring-boot",
+      "content": "We break down how Spring Boot helps us build reliable, scalable, and secure APIs for our clients.",
+      "image": "/blog2.jpg"
+    },
+    {
+      "id": 3,
+      "title": "Choosing the Right Cloud & Hosting Strategy",
+      "slug": "cloud-hosting",
+      "content": "Understand the pros and cons of AWS, DigitalOcean, and shared hosting—and how we choose what's best for your app.",
+      "image": "/blog3.jpg"
+    }
+  ]
+  
