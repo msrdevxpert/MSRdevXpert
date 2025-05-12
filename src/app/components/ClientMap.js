@@ -1,36 +1,51 @@
 "use client";
 
-import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
-import "leaflet/dist/leaflet.css";
+import React, { useEffect } from "react";
 import L from "leaflet";
-import { useEffect } from "react";
+import "leaflet/dist/leaflet.css";
 
-// Set default marker icon (required for Next.js)
-delete L.Icon.Default.prototype._getIconUrl;
+// Fix for missing marker icons
+import markerIcon from "leaflet/dist/images/marker-icon.png";
+import markerIconRetina from "leaflet/dist/images/marker-icon-2x.png";
+import markerShadow from "leaflet/dist/images/marker-shadow.png";
 
-L.Icon.Default.mergeOptions({
-  iconRetinaUrl: "/leaflet/marker-icon-2x.png",
-  iconUrl: "/leaflet/marker-icon.png",
-  shadowUrl: "/leaflet/marker-shadow.png",
-});
+const ClientMap = () => {
+  useEffect(() => {
+    // Configure default marker icon
+    delete L.Icon.Default.prototype._getIconUrl;
+    L.Icon.Default.mergeOptions({
+      iconRetinaUrl: markerIconRetina,
+      iconUrl: markerIcon,
+      shadowUrl: markerShadow,
+    });
 
-const ClientMap = ({ position = [22.57789, 88.43687] }) => {
-  return (
-    <MapContainer
-      center={position}
-      zoom={13}
-      scrollWheelZoom={false}
-      style={{ height: "300px", width: "100%" }}
-    >
-      <TileLayer
-        url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-        attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
-      />
-      <Marker position={position}>
-        <Popup>We are here!</Popup>
-      </Marker>
-    </MapContainer>
-  );
+    // Check if the map container already exists and remove it to avoid reinitialization issues
+    const mapContainer = document.getElementById("map");
+    if (mapContainer && mapContainer._leaflet_id) {
+      mapContainer._leaflet_id = null;
+    }
+
+    // Initialize the map
+    const map = L.map("map").setView([22.5726, 88.3639], 13); // Example coordinates for Kolkata
+
+    // Add a tile layer (e.g., OpenStreetMap)
+    L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+    }).addTo(map);
+
+    // Add a marker to the map
+    const marker = L.marker([22.57789, 88.43687]).addTo(map);
+    marker.bindPopup("<b>Kolkata</b><br>West Bengal, India").openPopup();
+
+    // Cleanup function to destroy the map instance
+    return () => {
+      if (map) {
+        map.remove();
+      }
+    };
+  }, []);
+
+  return <div id="map" style={{ height: "400px", width: "100%" }}></div>;
 };
 
 export default ClientMap;

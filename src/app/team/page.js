@@ -34,8 +34,8 @@ const Team = () => {
                     </div>
 
                     <div className="team-card">
-                        <img src="/cloud.png" alt="Ranit Mondal" />
-                        <h3>Ranit Mondal</h3>
+                        <img src="/cloud.png" alt="Ranit Mandal" />
+                        <h3>Ranit Mandal</h3>
                         <p>Backend Developer & Cloud Engineer</p>
                         <div className="social-icons">
                             <a href="#"><Facebook /></a>
