@@ -5,9 +5,9 @@ import L from "leaflet";
 import "leaflet/dist/leaflet.css";
 
 // Fix for missing marker icons
-import markerIcon from "leaflet/dist/images/marker-icon.png";
-import markerIconRetina from "leaflet/dist/images/marker-icon-2x.png";
-import markerShadow from "leaflet/dist/images/marker-shadow.png";
+const markerIcon = "/leaflet/marker-icon.png";
+const markerIconRetina = "/leaflet/marker-icon-2x.png";
+const markerShadow = "/leaflet/marker-shadow.png";
 
 const ClientMap = () => {
   useEffect(() => {
@@ -26,7 +26,7 @@ const ClientMap = () => {
     }
 
     // Initialize the map
-    const map = L.map("map").setView([22.5726, 88.3639], 13); // Example coordinates for Kolkata
+    const map = L.map("map").setView([22.57789, 88.43687], 13); // Example coordinates for Kolkata
 
     // Add a tile layer (e.g., OpenStreetMap)
     L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
