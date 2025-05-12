@@ -36,7 +36,164 @@ a {
 }
 
 @media (prefers-color-scheme: dark) {
-  html {
+  /* html {
     color-scheme: dark;
+  } */
+}
+/* Set a consistent background and text color for the whole app */
+body {
+  background: #f7f9fc;
+  color: #1a1a1a;
+  /* min-height: 100vh; */
+  margin: 0;
+  font-family: var(--font-geist-sans, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif);
+}
+
+/* Optional: Make sure html takes full height */
+html {
+  height: 100%;
+}
+
+/* Ensure the main wrapper stretches to fill the viewport */
+
+
+/* Make sure content doesn't hide behind fixed nav/footer if used */
+body > .navbar-container,
+body > .footer-container {
+  z-index: 10;
+  position: relative;
+}
+
+
+.main{
+  min-height: 70vh;
+  padding: 2rem;
+}
+
+
+
+
+
+/* Container */
+.layout-container {
+  /* display: grid; */
+  grid-template-columns: repeat(12, 1fr);
+  gap: 16px; /* Default gutter spacing */
+  padding: 16px;
+}
+
+/* Row */
+.layout-row {
+  display: contents;
+  grid-column: span 12;
+}
+
+/* Column */
+.layout-col {
+  grid-column: span 12; /* Default to full width */
+}
+
+.layout-col-1 {
+  grid-column: span 1;
+}
+
+.layout-col-2 {
+  grid-column: span 2;
+}
+
+.layout-col-3 {
+  grid-column: span 3;
+}
+
+.layout-col-4 {
+  grid-column: span 4;
+}
+
+.layout-col-5 {
+  grid-column: span 5;
+}
+
+.layout-col-6 {
+  grid-column: span 6;
+}
+
+.layout-col-7 {
+  grid-column: span 7;
+}
+
+.layout-col-8 {
+  grid-column: span 8;
+}
+
+.layout-col-9 {
+  grid-column: span 9;
+}
+
+.layout-col-10 {
+  grid-column: span 10;
+}
+
+.layout-col-11 {
+  grid-column: span 11;
+}
+
+.layout-col-12 {
+  grid-column: span 12;
+}
+
+/* Responsive breakpoints */
+@media (max-width: 1200px) {
+  .layout-container {
+    grid-template-columns: repeat(12, 1fr);
+    gap: 16px;
+  }
+
+  .layout-col {
+    grid-column: span 12; /* Full width on smaller screens */
+  }
+
+  .layout-col-1 {
+    grid-column: span 12;
+  }
+
+  /* Customize columns for smaller screens */
+  .layout-col-6 {
+    grid-column: span 6;
   }
 }
+
+@media (max-width: 768px) {
+  .layout-container {
+    grid-template-columns: repeat(12, 1fr);
+    gap: 8px; /* Smaller gutter for smaller screens */
+  }
+
+  .layout-col {
+    grid-column: span 12;
+  }
+
+  .layout-col-1 {
+    grid-column: span 12;
+  }
+
+  /* Customize columns for smaller screens */
+  .layout-col-4 {
+    grid-column: span 6;
+  }
+}
+
+@media (max-width: 480px) {
+  .layout-container {
+    grid-template-columns: 1fr;
+    gap: 8px; /* Even smaller gutter */
+  }
+
+  .layout-col {
+    grid-column: span 12;
+  }
+}
+
+
+
+
+
