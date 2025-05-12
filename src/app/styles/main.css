@@ -128,7 +128,28 @@ body {
     font-size: 13px;
     color: #999;
 }
-
+/* ============ */
+.footer-social-icons {
+    margin-top: 12px;
+  }
+  
+  .footer-social-icons a {
+    margin-right: 14px;
+    font-size: 24px;
+    color: #c6c2c2;
+    transition: transform 0.3s ease, color 0.3s ease;
+  }
+  
+  .footer-social-icons a:hover {
+    color: #40a9ff;
+    transform: scale(1.2);
+  }
+  
+  .footer-contact {
+    /* text-align: right; */
+    padding-right: 100px;
+  }
+  
 
 /* <===============================FooterEnd============================> */
 
@@ -1292,7 +1313,7 @@ body {
     padding: 20px;
     text-align: center;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    height: 420px; /* Increase height if needed */
+    /* height: 420px; Increase height if needed */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -1331,6 +1352,65 @@ body {
 .team-card p {
     color: #777;
 }
+
+
+/* .team-section {
+    padding: 60px 20px;
+    background: #f7f7f7;
+    position: relative;
+    text-align: center;
+  } */
+  
+  .team-container .gradient-title span {
+    color: #ff7e5f;
+  }
+  
+  /* .team-grid {
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 40px;
+  } */
+  
+  /* .team-card {
+    background: #fff;
+    border-radius: 12px;
+    padding: 25px;
+    width: 28vh;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    position: relative;
+  } */
+  
+  .team-card:hover {
+    transform: translateY(-10px);
+  }
+  
+  /* .team-card img {
+    width: 100vh;
+    height: 20vh;
+    object-fit: contain;
+    border-radius: 50%;
+    margin-bottom: 15px;
+  } */
+  
+  .social-icons {
+    margin-top: 10px;
+  }
+  
+  .social-icons a {
+    margin: 0 8px;
+    font-size: 22px;
+    color: #555;
+    transition: color 0.3s, transform 0.3s;
+  }
+  
+  .social-icons a:hover {
+    color: #ff7e5f;
+    transform: scale(1.2) rotate(5deg);
+  }
+  
 
 /* ========= TEAM SECTION END ========= */
 /* ========= Blog SECTION ========= */

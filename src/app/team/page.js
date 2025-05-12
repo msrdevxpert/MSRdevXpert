@@ -1,31 +1,47 @@
 import React from 'react';
-import SubhoImage from '../styles/images/frontend.png'; // Import the image
-import MunnaImage from '../styles/images/backend.png'; // Import the image
-import RanitImage from '../../../public/cloud.png'; // Import the image
+import { Facebook, Twitter, Instagram } from 'react-bootstrap-icons';
+import {FaXTwitter} from "react-icons/fa6";
+
 const Team = () => {
     return (
         <section className="team-section">
-        <div className="orange-ball"></div>
+            <div className="orange-ball"></div>
             <div className="team-container">
                 <h1 className="gradient-title"><span>Our</span> Team</h1>
                 <p className="section-subtitle">Meet the brains behind MSR DevXpert</p>
 
                 <div className="team-grid">
                     <div className="team-card">
-                    <img src="/frontend.png" alt="Subhojit Saha" />
+                        <img src="/frontend.png" alt="Subhojit Saha" />
                         <h3>Subhojit Saha</h3>
                         <p>Frontend Developer</p>
+                        <div className="social-icons">
+                            <a href="#"><Facebook /></a>
+                            <a href="#"><FaXTwitter /></a>
+                            <a href="#"><Instagram /></a>
+                        </div>
                     </div>
+
                     <div className="team-card">
-                    <img src="/backend.png" alt="Munna Sharma" />
+                        <img src="/backend.png" alt="Munna Sharma" />
                         <h3>Munna Sharma</h3>
                         <p>Backend Developer</p>
+                        <div className="social-icons">
+                            <a href="#"><Facebook /></a>
+                            <a href="#"><FaXTwitter /></a>
+                            <a href="#"><Instagram /></a>
+                        </div>
                     </div>
+
                     <div className="team-card">
                         <img src="/cloud.png" alt="Ranit Mondal" />
                         <h3>Ranit Mondal</h3>
                         <p>Backend Developer & Cloud Engineer</p>
-                        <p></p>
+                        <div className="social-icons">
+                            <a href="#"><Facebook /></a>
+                            <a href="#"><FaXTwitter /></a>
+                            <a href="#"><Instagram /></a>
+                        </div>
                     </div>
                 </div>
             </div>
