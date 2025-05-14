@@ -1,5 +1,6 @@
 "use client";
 import React, { useState } from "react";
+import toast from "react-hot-toast";
 import AlertDismissibleExample from "../components/Alert";
 import { Collapse } from "antd";
 import { Button } from "@mui/material";
@@ -69,6 +70,32 @@ const Contact = () => {
     setFormData({ ...formData, [name]: value });
   };
 
+  const handleSuccessToast = () => {
+  toast.success("Message sent successfully!", {
+    icon: '✅', // Optional: custom icon
+    style: {
+      backgroundColor: '#adebb3',
+      color: '#000000',
+      fontSize: '16px',
+      padding: '12px 20px',
+      borderRadius: '8px',
+    },
+  });
+};
+
+const handleErrorToast = () => {
+  toast.error("Something went wrong!", {
+    icon: '❌', // Optional: custom icon
+    style: {
+      backgroundColor: '#dc3545',
+      color: '#fff',
+      fontSize: '16px',
+      padding: '12px 20px',
+      borderRadius: '8px',
+    },
+  });
+};
+
   // Handle form submit
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -101,9 +128,11 @@ const Contact = () => {
           // setAlertVariant("success");
           // setAlertMessage("Message sent successfully!");
           // setShowAlert(true);
+          //  toast.success("Message sent successfully!");.
+          handleSuccessToast();
           setToastType("success");
           setShowToast(true);
-    setTimeout(() => setShowToast(false), 4000); // hide after 4 sec
+          setTimeout(() => setShowToast(false), 4000); // hide after 4 sec
           setFormData({ name: "", email: "", message: "" });
           setLoading(false);
         },
@@ -112,9 +141,11 @@ const Contact = () => {
           // setAlertVariant("danger");
           // setAlertMessage("Failed to send message. Please try again later.");
           // setShowAlert(true);
+          // toast.error("Something went wrong. Please try again later.");
+          handleErrorToast();
           setToastType("error");
           setShowToast(true);
-    setTimeout(() => setShowToast(false), 4000); // hide after 4 sec
+          setTimeout(() => setShowToast(false), 4000); // hide after 4 sec
           setLoading(false);
         }
       );
@@ -159,17 +190,25 @@ const Contact = () => {
               onChange={handleChange}
               required
             ></textarea>
-           <Button type="submit" className="custom-apply-btn" size="large" disabled={loading}>
-  {loading ? (
-    <>
-      <span className="spinner-border spinner-border-sm me-2 text-white" role="status" aria-hidden="true"></span>
-      <span className="text-white">Sending...</span>
-    </>
-  ) : (
-    "Send Message"
-  )}
-</Button>
-
+            <Button
+              type="submit"
+              className="custom-apply-btn"
+              size="large"
+              disabled={loading}
+            >
+              {loading ? (
+                <>
+                  <span
+                    className="spinner-border spinner-border-sm me-2 text-white"
+                    role="status"
+                    aria-hidden="true"
+                  ></span>
+                  <span className="text-white">Sending...</span>
+                </>
+              ) : (
+                "Send Message"
+              )}
+            </Button>
           </form>
           <div
             style={{ position: "fixed", bottom: 20, right: 20, zIndex: 9999 }}
@@ -182,16 +221,17 @@ const Contact = () => {
                 message={alertMessage}
               />
             )} */}
-            {showToast && (
-  <div
-    className={`fixed bottom-6 right-6 z-50 px-4 py-2 rounded-lg text-white shadow-md transition-all duration-300 ${
-      toastType === "success" ? "bg-green-600" : "bg-red-600"
-    }`}
-  >
-    {toastType === "success" ? "Message sent successfully!" : "Something went wrong!"}
-  </div>
-)}
-
+            {/* {showToast && (
+              <div
+                className={`fixed bottom-6 right-6 z-50 px-4 py-2 rounded-lg text-white shadow-md transition-all duration-300 ${
+                  toastType === "success" ? "bg-green-600" : "bg-red-600"
+                }`}
+              >
+                {toastType === "success"
+                  ? "Message sent successfully!"
+                  : "Something went wrong!"}
+              </div>
+            )} */}
           </div>
 
           <div className="contact-details">
@@ -199,19 +239,38 @@ const Contact = () => {
               <span>Contact</span> Details
             </h3>
             <p>
-              <MailOutlined style={{ marginRight: "8px" }} />
-              <strong>Email:</strong> msrdevxpert@gmail.com
-            </p>
+    <MailOutlined style={{ marginRight: "8px" }} />
+    <strong>Email:</strong>{" "}
+    <a
+  href="mailto:msrdevxpert@gmail.com"
+  className="custom-link"
+>
+  msrdevxpert@gmail.com
+</a>
+  </p>
             <p>
-              <PhoneOutlined style={{ marginRight: "8px" }} />
-              <strong>Phone:</strong> +91 76672 29002
-            </p>
-            <p>
-              <EnvironmentOutlined style={{ marginRight: "8px" }} />
-              <strong>Address:</strong> Ecostation Business Tower, Street Number
-              9, BP Block, Sector V, Bidhannagar, Kolkata, West Bengal 700091
-            </p>
-
+    <PhoneOutlined style={{ marginRight: "8px" }} />
+    <strong>Phone:</strong>{" "}
+   <a
+  href="tel:+917667229002"
+  className="custom-link"
+>
+  +91 76672 29002
+</a>
+  </p>
+           <p>
+    <EnvironmentOutlined style={{ marginRight: "8px" }} />
+    <strong>Address:</strong>{" "}
+    <a
+  href="https://www.google.com/maps/place/Ecostation+Business+Tower..."
+  target="_blank"
+  rel="noopener noreferrer"
+  className="custom-link"
+>
+  Ecostation Business Tower, Street Number 9, BP Block, Sector V,
+  Bidhannagar, Kolkata, West Bengal 700091
+</a>
+  </p>
             {/* Embedded Map */}
             <div className="map-container" style={{ marginTop: "20px" }}>
               <ClientMap />

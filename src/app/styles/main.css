@@ -149,7 +149,63 @@ body {
     /* text-align: right; */
     padding-right: 100px;
   }
-  
+  /* for mobile */
+  /* Footer mobile responsiveness */
+@media screen and (max-width: 768px) {
+  .footer-container {
+    padding: 30px 16px 10px;
+    text-align: center;
+  }
+
+  .footer-logo {
+    justify-content: center;
+  }
+
+  .footer-tagline {
+    margin-top: 8px;
+    font-size: 13px;
+  }
+
+  .footer-social-icons {
+    justify-content: center;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 12px;
+  }
+
+  .footer-social-icons a {
+    margin: 0 10px;
+  }
+
+  .footer-title {
+    font-size: 16px;
+    margin-top: 20px;
+  }
+
+  .footer-links,
+  .footer-contact {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    margin-top: 20px;
+    text-align: center;
+  }
+
+  .footer-links li {
+    margin: 6px 0;
+  }
+
+  .footer-bottom {
+    font-size: 12px;
+    padding-top: 15px;
+  }
+
+  /* Override AntD Col padding for small screens */
+  .ant-col {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+}
+
 
 /* <===============================FooterEnd============================> */
 
@@ -1266,6 +1322,23 @@ body {
     font-size: 0.95rem;
     text-align: left;
 }
+
+/* hyperlink */
+.custom-link {
+  text-decoration: none;
+  color: inherit;
+  transition: color 0.3s, text-decoration 0.3s;
+}
+
+.custom-link:hover {
+  color: #13c2c2; /* or any highlight color */
+  text-decoration: underline;
+  cursor: pointer;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+
 /* ===================Contact==================== */
 /* ========= Team SECTION  ========= */
 .team-section {
@@ -1806,3 +1879,47 @@ body {
   .custom-apply-btn:hover {
     background-color: #13c2c2 !important;
   }
+
+
+
+  .landscape-warning {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: #111;
+  color: white;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size: 1.2rem;
+  padding: 2rem;
+}
+.orientation-overlay {
+  position: fixed;
+  z-index: 9999;
+  background: #000000e0;
+  color: #fff;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 2rem;
+}
+
+.orientation-message h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.orientation-message p {
+  font-size: 1rem;
+  opacity: 0.8;
+}

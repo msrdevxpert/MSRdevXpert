@@ -9,7 +9,8 @@ import ScrollToTop from "../app/components/ScrollToTop"; // Import the ScrollToT
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 import { Layout } from "antd"; // ✅ make sure this comes from 'antd'
-
+import OrientationLock from "./components/OrientationLock";
+import { Toaster } from "react-hot-toast";
 const { Content } = Layout;
 
 const geistSans = Geist({ variable: "--font-geist-sans", subsets: ["latin"] });
@@ -53,10 +54,12 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
         <Layout>
+        <OrientationLock />
         <ScrollToTop /> {/* Add ScrollToTop component here */}
           <Navbar />
           <div className="layout-container" style={{ padding: "2rem", background: "#f0f2f5", minHeight: "80vh" }}>
             {children}
+             <Toaster position="bottom-right" reverseOrder={false} />
             </div>
           <Footer />
         </Layout>

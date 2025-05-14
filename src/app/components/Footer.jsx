@@ -14,7 +14,8 @@ import {
 import "../styles/main.css";
 
 const Footer = () => {
-  const year = new Date().getFullYear(); // safe to use in client component
+  const date = new Date();
+    const year = date.getFullYear();
 
   return (
     <div className="footer-container">
@@ -51,7 +52,7 @@ const Footer = () => {
           </div>
         </Col>
 
-        <Col xs={12} md={8} style={{ paddingLeft: "150px" }}>
+        <Col xs={24} md={8} style={{ paddingLeft: "150px" }}>
           <h3 className="footer-title">Quick Links</h3>
           <ul className="footer-links">
             <li><a href="/about">About Us</a></li>
@@ -61,11 +62,25 @@ const Footer = () => {
           </ul>
         </Col>
 
-        <Col xs={12} md={8} className="footer-contact" >
+        <Col xs={24} md={8} className="footer-contact" >
           <h3 className="footer-title">Contact</h3>
-          <p><EnvironmentOutlined /> Kolkata, India</p>
-          <p><PhoneOutlined /> +91 9876543210</p>
-          <p><MailOutlined /> info@msrdevxpert.com</p>
+          <p><EnvironmentOutlined /> <a
+  href="https://www.google.com/maps/place/Ecostation+Business+Tower..."
+  target="_blank"
+  rel="noopener noreferrer"
+  className="custom-link"
+>
+  Ecostation Business Tower, Street Number 9, BP Block, Sector V,
+  Bidhannagar, Kolkata, West Bengal 700091
+</a></p>
+          <p><PhoneOutlined /><a href="tel:+917667229002"
+  className="custom-link"> +91 7667229002</a></p>
+          <p><MailOutlined /> <a
+  href="mailto:msrdevxpert@gmail.com"
+  className="custom-link"
+>
+  msrdevxpert@gmail.com
+</a></p>
         </Col>
       </Row>
 
