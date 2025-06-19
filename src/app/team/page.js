@@ -1,6 +1,6 @@
 import React from 'react';
 import { Facebook, Twitter, Instagram } from 'react-bootstrap-icons';
-import {FaXTwitter} from "react-icons/fa6";
+import {FaXTwitter,FaLinkedinIn} from "react-icons/fa6";
 
 const Team = () => {
     return (
@@ -16,9 +16,10 @@ const Team = () => {
                         <h3>Subhojit Saha</h3>
                         <p>Frontend Developer</p>
                         <div className="social-icons">
-                            <a href="#"><Facebook /></a>
-                            <a href="#"><FaXTwitter /></a>
-                            <a href="#"><Instagram /></a>
+                            <a href="https://www.facebook.com/profile.php?id=100008829696923" target="_blank"><Facebook /></a>
+                            <a href="https://x.com/Subhojit861744" target="_blank"><FaXTwitter /></a>
+                            <a href="https://www.instagram.com/Subhojit4630" target="_blank"><Instagram /></a>
+                            <a href="www.linkedin.com/in/subhojitsaha808" target="_blank"><FaLinkedinIn /></a>
                         </div>
                     </div>
 
@@ -27,9 +28,11 @@ const Team = () => {
                         <h3>Munna Sharma</h3>
                         <p>Backend Developer</p>
                         <div className="social-icons">
-                            <a href="#"><Facebook /></a>
-                            <a href="#"><FaXTwitter /></a>
-                            <a href="#"><Instagram /></a>
+                            <a href="https://www.facebook.com/profile.php?id=100010714185338&sk=about" target="_blank"><Facebook /></a>
+                            <a href="https://x.com/MunnaRanaa" target="_blank"><FaXTwitter /></a>
+                            <a href="https://www.instagram.com/munna.raana" target="_blank"><Instagram /></a>
+                            <a href="https://www.linkedin.com/in/munna-rana/" target="_blank"><FaLinkedinIn /></a>
+
                         </div>
                     </div>
 
@@ -38,9 +41,10 @@ const Team = () => {
                         <h3>Ranit Mandal</h3>
                         <p>Backend Developer & Cloud Engineer</p>
                         <div className="social-icons">
-                            <a href="#"><Facebook /></a>
-                            <a href="#"><FaXTwitter /></a>
-                            <a href="#"><Instagram /></a>
+                            <a href="https://www.facebook.com/ranitmandal17/about" target="_blank"><Facebook /></a>
+                            <a href="https://x.com/MandalRanit" target="_blank"><FaXTwitter /></a>
+                            <a href="https://www.instagram.com/ranit_org" target="_blank"><Instagram /></a>
+                            <a href="https://www.linkedin.com/in/ranitmandal/" target="_blank"><FaLinkedinIn /></a>
                         </div>
                     </div>
                 </div>

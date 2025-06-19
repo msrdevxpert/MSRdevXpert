@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import toast from "react-hot-toast";
 import AlertDismissibleExample from "../components/Alert";
-import { Collapse } from "antd";
+import { Collapse, message } from "antd";
 import { Button } from "@mui/material";
 import {
   MailOutlined,
@@ -61,6 +61,7 @@ const Contact = () => {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
+    phone:"",
     message: "",
   });
 
@@ -97,59 +98,113 @@ const handleErrorToast = () => {
 };
 
   // Handle form submit
-  const handleSubmit = (e) => {
-    e.preventDefault();
+  // const handleSubmit = (e) => {
+  //   e.preventDefault();
 
-    const { name, email, message } = formData;
+  //   const { name, email, message } = formData;
 
-    if (!name || !email || !message) {
-      setAlertVariant("danger");
-      setAlertMessage("Please fill in all fields.");
-      setShowAlert(true);
-      return;
+  //   if (!name || !email || !message) {
+  //     setAlertVariant("danger");
+  //     setAlertMessage("Please fill in all fields.");
+  //     setShowAlert(true);
+  //     return;
+  //   }
+
+  //   setLoading(true);
+
+  //   emailjs
+  //     .send(
+  //       "service_n1l686u",
+  //       "template_1bvmcyf",
+  //       {
+  //         from_name: name,
+  //         from_email: email,
+  //         message: message,
+  //       },
+  //       "oFVhdo4NTEN07FhP_"
+  //     )
+  //     .then(
+  //       (response) => {
+  //         console.log("Email sent successfully:", response);
+  //         // setAlertVariant("success");
+  //         // setAlertMessage("Message sent successfully!");
+  //         // setShowAlert(true);
+  //         //  toast.success("Message sent successfully!");.
+  //         handleSuccessToast();
+  //         setToastType("success");
+  //         setShowToast(true);
+  //         setTimeout(() => setShowToast(false), 4000); // hide after 4 sec
+  //         setFormData({ name: "", email: "", message: "" });
+  //         setLoading(false);
+  //       },
+  //       (error) => {
+  //         console.log("Error sending email:", error);
+  //         // setAlertVariant("danger");
+  //         // setAlertMessage("Failed to send message. Please try again later.");
+  //         // setShowAlert(true);
+  //         // toast.error("Something went wrong. Please try again later.");
+  //         handleErrorToast();
+  //         setToastType("error");
+  //         setShowToast(true);
+  //         setTimeout(() => setShowToast(false), 4000); // hide after 4 sec
+  //         setLoading(false);
+  //       }
+  //     );
+  // };
+
+  const handleSubmit = async (e) => {
+  e.preventDefault();
+
+  const { name, email, phone, message } = formData;
+
+  if (!name || !email || !phone || !message ) {
+    toast.error("Please fill in all fields!");
+    return;
+  }
+
+  setLoading(true);
+
+  // const reader = new FileReader();
+  // reader.readAsDataURL(resume);
+
+  
+
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          name,
+          email,
+          phone,
+          message,
+         
+        }),
+      });
+
+      if (response.ok) {
+        handleSuccessToast();
+        setFormData({
+          name: '',
+          email: '',
+          phone: '',
+          message: '',
+          
+        });
+        e.target.reset();
+      } else {
+        handleErrorToast();
+      }
+    } catch (error) {
+      console.error('Error sending form:', error);
+      handleErrorToast();
     }
 
-    setLoading(true);
-
-    emailjs
-      .send(
-        "service_n1l686u",
-        "template_1bvmcyf",
-        {
-          from_name: name,
-          from_email: email,
-          message: message,
-        },
-        "oFVhdo4NTEN07FhP_"
-      )
-      .then(
-        (response) => {
-          console.log("Email sent successfully:", response);
-          // setAlertVariant("success");
-          // setAlertMessage("Message sent successfully!");
-          // setShowAlert(true);
-          //  toast.success("Message sent successfully!");.
-          handleSuccessToast();
-          setToastType("success");
-          setShowToast(true);
-          setTimeout(() => setShowToast(false), 4000); // hide after 4 sec
-          setFormData({ name: "", email: "", message: "" });
-          setLoading(false);
-        },
-        (error) => {
-          console.log("Error sending email:", error);
-          // setAlertVariant("danger");
-          // setAlertMessage("Failed to send message. Please try again later.");
-          // setShowAlert(true);
-          // toast.error("Something went wrong. Please try again later.");
-          handleErrorToast();
-          setToastType("error");
-          setShowToast(true);
-          setTimeout(() => setShowToast(false), 4000); // hide after 4 sec
-          setLoading(false);
-        }
-      );
-  };
+    setLoading(false);
+  
+};
 
   return (
     <section className="contact-section">
@@ -179,6 +234,14 @@ const handleErrorToast = () => {
               name="email"
               placeholder="Your Email"
               value={formData.email}
+              onChange={handleChange}
+              required
+            />
+            <input
+              type="tel"
+              name="phone"
+              placeholder="Yor Mobile Nmber"
+              value={formData.phone}
               onChange={handleChange}
               required
             />
