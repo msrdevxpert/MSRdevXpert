@@ -4,9 +4,9 @@ import { NextResponse } from 'next/server';
 import nodemailer from 'nodemailer';
 
 export async function POST(request) {
-  const username = process.env.NEXT_PUBLIC_BURNER_USERNAME;
-  const password = process.env.NEXT_PUBLIC_BURNER_PASSWORD;
-  const myEmail = process.env.NEXT_PUBLIC_PERSONAL_EMAIL;
+  const username = process.env.BURNER_USERNAME;
+  const password = process.env.BURNER_PASSWORD;
+  const myEmail = process.env.PERSONAL_EMAIL;
 
   try {
     const data = await request.json();
@@ -15,8 +15,8 @@ export async function POST(request) {
    const transporter = nodemailer.createTransport({
   service: 'gmail',
   auth: {
-    user: process.env.NEXT_PUBLIC_BURNER_USERNAME,
-    pass: process.env.NEXT_PUBLIC_BURNER_PASSWORD,
+    user: username,
+    pass: password,
   },
 });
 

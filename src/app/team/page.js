@@ -1,9 +1,51 @@
 import React from 'react';
+import Head from "next/head";
+
 import { Facebook, Twitter, Instagram } from 'react-bootstrap-icons';
 import {FaXTwitter,FaLinkedinIn} from "react-icons/fa6";
 
 const Team = () => {
     return (
+        <>
+        <Head>
+  <title>Meet the MSR DevXpert Team | Full-Stack Developers</title>
+  <meta
+    name="description"
+    content="Get to know the skilled minds behind MSR DevXpert — from frontend expertise to backend and cloud engineering."
+  />
+  <meta
+    name="keywords"
+    content="MSR DevXpert team, frontend developer, backend developer, cloud engineer, full-stack development team, Subhojit Saha, Munna Sharma, Ranit Mandal"
+  />
+  <meta name="author" content="MSR DevXpert" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  {/* Open Graph Meta */}
+  <meta property="og:title" content="Meet the MSR DevXpert Team | Full-Stack Developers" />
+  <meta
+    property="og:description"
+    content="Explore our team of React developers, backend engineers, and cloud specialists working together at MSR DevXpert."
+  />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://msrdevxpert.com/team" />
+  <meta property="og:image" content="https://msrdevxpert.com/favicon.ico" />
+
+  {/* Twitter Card Meta */}
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Meet the MSR DevXpert Team | Full-Stack Developers" />
+  <meta
+    name="twitter:description"
+    content="Discover the talented developers and engineers behind MSR DevXpert's high-performance web solutions."
+  />
+  <meta name="twitter:image" content="https://msrdevxpert.com/favicon.ico" />
+
+  {/* Canonical URL */}
+  <link rel="canonical" href="https://msrdevxpert.com/team" />
+
+  {/* Favicon */}
+  <link rel="icon" href="/favicon.ico" />
+</Head>
+
         <section className="team-section">
             <div className="orange-ball"></div>
             <div className="team-container">
@@ -50,6 +92,7 @@ const Team = () => {
                 </div>
             </div>
         </section>
+        </>
     );
 };
 

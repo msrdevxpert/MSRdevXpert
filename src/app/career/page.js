@@ -1,11 +1,52 @@
 
 import React from 'react';
+import Head from "next/head";
+
 import { Button } from 'react-bootstrap';
 import "../styles/main.css"; // Import your global CSS
 // import './Career.css';
 
 const Career = () => {
     return (
+        <>
+        <Head>
+    <title>Careers at MSR DevXpert – Join Our Tech Team</title>
+    <meta
+      name="description"
+      content="Explore exciting career opportunities at MSR DevXpert. We're hiring frontend developers, backend engineers, and UI/UX designers!"
+    />
+    <meta
+      name="keywords"
+      content="MSR DevXpert Careers, Developer Jobs, React Developer, Spring Boot Jobs, UI UX Designer, Tech Hiring, Web Development Jobs"
+    />
+    <meta name="author" content="MSR DevXpert" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    {/* Open Graph Meta */}
+    <meta property="og:title" content="Careers at MSR DevXpert" />
+    <meta
+      property="og:description"
+      content="Join MSR DevXpert and shape the future of full-stack development. Explore our job openings and apply today!"
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://msrdevxpert.com/career" />
+    <meta property="og:image" content="https://msrdevxpert.com/favicon.ico" />
+
+    {/* Twitter Card Meta */}
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Careers at MSR DevXpert" />
+    <meta
+      name="twitter:description"
+      content="We're hiring! Apply now to MSR DevXpert and work with a modern full-stack development company."
+    />
+    <meta name="twitter:image" content="https://msrdevxpert.com/favicon.ico" />
+
+    {/* Canonical URL */}
+    <link rel="canonical" href="https://msrdevxpert.com/career" />
+
+    {/* Favicon */}
+    <link rel="icon" href="/favicon.ico" />
+  </Head>
         <section className="career-section">
         {/* Background Blob */}
       <div className="orange-ball"></div>
@@ -49,6 +90,7 @@ const Career = () => {
                 </p>
             </div>
         </section>
+        </>
     );
 };
 

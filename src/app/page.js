@@ -1,4 +1,6 @@
 'use client';
+import Head from "next/head";
+
 import React, { useEffect, useState } from "react";
 import { useRouter } from 'next/navigation';
 import { Button, Row, Col } from "antd";
@@ -68,7 +70,45 @@ export default function Home() {
   }, [isClient]);
 
   return (
+    <>
+<Head>
+  <title>MSR DevXpert | Full-Stack Web & Mobile App Development in India</title>
+  <link rel="manifest" href="/manifest.webmanifest" />
+<meta name="theme-color" content="#ff6600" />
+
+  <meta name="description" content="MSR DevXpert is a full-stack web and mobile development company offering custom solutions with React, Java, Spring Boot, and more. Partner with us to bring your digital ideas to life." />
+  <meta name="keywords" content="MSR DevXpert, web development India, mobile app development, React developers, Java backend, Spring Boot, full-stack developers, SEO websites, software company Kolkata" />
+  <meta name="author" content="MSR DevXpert" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  {/* Open Graph / Facebook */}
+  <meta property="og:title" content="MSR DevXpert | Full-Stack Web & Mobile App Development" />
+  <meta property="og:description" content="Explore cutting-edge digital solutions with MSR DevXpert — from websites to mobile apps and cloud integrations." />
+  <meta property="og:image" content="https://msrdevxpert.com/og-image.jpg" />
+  <meta property="og:url" content="https://msrdevxpert.com/" />
+  <meta property="og:type" content="website" />
+
+  {/* Twitter */}
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="MSR DevXpert | Full-Stack Web & Mobile App Development" />
+  <meta name="twitter:description" content="We build modern, scalable digital experiences using React, Java, Spring Boot, and more." />
+  <meta name="twitter:image" content="https://msrdevxpert.com/og-image.jpg" />
+
+  {/* Canonical */}
+  <link rel="canonical" href="https://msrdevxpert.com/" />
+
+  {/* Favicon */}
+  <link rel="icon" href="/favicon.ico" sizes="any" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+  <meta name="theme-color" content="#ffffff" />
+</Head>
+
     <div className="home-wrapper">
+
+
       {/* === Hero Section === */}
       <section className="hero-modern" data-aos="fade-up">
         <div className="hero-row">
@@ -196,5 +236,6 @@ export default function Home() {
         </div>
       </section>
     </div>
+    </>
   );
 }

@@ -1,4 +1,6 @@
 import React from "react";
+import Head from "next/head";
+
 import { Row, Col, Card } from "antd";
 import { RocketOutlined, EyeOutlined, StarOutlined } from "@ant-design/icons";
 import "../styles/main.css";
@@ -7,6 +9,47 @@ import WorkOutlineIcon from "@mui/icons-material/WorkOutline";
 
 const About = () => {
   return (
+    <>
+<Head>
+  <title>About Us | MSR DevXpert – Full-Stack Web Development</title>
+  <meta
+    name="description"
+    content="Learn about MSR DevXpert’s mission, vision, and how we empower businesses through scalable and modern digital solutions."
+  />
+  <meta
+    name="keywords"
+    content="MSR DevXpert, About MSR DevXpert, Full-Stack Development, Web Development Company, Software Development, Agile Development"
+  />
+  <meta name="author" content="MSR DevXpert" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  {/* Open Graph - Without a wide image */}
+  <meta property="og:title" content="About Us | MSR DevXpert" />
+  <meta
+    property="og:description"
+    content="Discover our approach, values, and why businesses trust MSR DevXpert for full-stack development solutions."
+  />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://msrdevxpert.com/about" />
+
+  {/* Optional fallback image (favicon-based logo) */}
+  <meta property="og:image" content="https://msrdevxpert.com/favicon.ico" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="About Us | MSR DevXpert" />
+  <meta
+    name="twitter:description"
+    content="Meet the team behind MSR DevXpert and explore our mission-driven full-stack development approach."
+  />
+  <meta name="twitter:image" content="https://msrdevxpert.com/favicon.ico" />
+
+  {/* Canonical URL */}
+  <link rel="canonical" href="https://msrdevxpert.com/about" />
+
+  {/* Favicon */}
+  <link rel="icon" href="/favicon.ico" />
+</Head>
+
+
     <div className="about-container">
       {/* Background Blob */}
       <div className="orange-ball"></div>
@@ -94,6 +137,7 @@ const About = () => {
         </ul>
       </div>
     </div>
+    </>
   );
 };
 

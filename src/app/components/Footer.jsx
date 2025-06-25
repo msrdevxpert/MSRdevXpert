@@ -27,7 +27,7 @@ const Footer = () => {
             style={{ display: "flex", alignItems: "center", gap: "8px" }}
           >
             <img
-              src="/MSR_logo-removebg-preview1.png"
+              src="/Logo3 (1).svg"
               alt="MSR DevXpert Logo"
               style={{ height: "60px", width: "auto" }}
             />

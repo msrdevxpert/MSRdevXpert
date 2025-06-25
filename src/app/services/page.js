@@ -1,4 +1,6 @@
 import React from 'react';
+import Head from "next/head";
+
 import { Row, Col, Card } from 'antd';
 import {
   CodeOutlined,
@@ -52,6 +54,46 @@ const services = [
 
 const Services = () => {
   return (
+    <>
+    <Head>
+  <title>Web Development Services | MSR DevXpert</title>
+  <meta
+    name="description"
+    content="Explore MSR DevXpert’s full-stack development services including React.js, Spring Boot APIs, cloud hosting, mobile UI design, and secure database solutions."
+  />
+  <meta
+    name="keywords"
+    content="React web development, Spring Boot APIs, cloud hosting, full stack projects, database design, mobile UI, MSR DevXpert services"
+  />
+  <meta name="author" content="MSR DevXpert" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  {/* Open Graph Meta */}
+  <meta property="og:title" content="Web Development Services | MSR DevXpert" />
+  <meta
+    property="og:description"
+    content="We deliver cutting-edge solutions including responsive websites, backend APIs, cloud deployment, and full-stack development services."
+  />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://msrdevxpert.com/services" />
+  <meta property="og:image" content="https://msrdevxpert.com/favicon.ico" />
+
+  {/* Twitter Card Meta */}
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Web Development Services | MSR DevXpert" />
+  <meta
+    name="twitter:description"
+    content="From frontend to backend — see how MSR DevXpert builds scalable digital solutions with React, Spring Boot, and cloud platforms."
+  />
+  <meta name="twitter:image" content="https://msrdevxpert.com/favicon.ico" />
+
+  {/* Canonical URL */}
+  <link rel="canonical" href="https://msrdevxpert.com/services" />
+
+  {/* Favicon */}
+  <link rel="icon" href="/favicon.ico" />
+</Head>
+
     <div className="services-container">
       {/* Orange Ball Background */}
       <div className="orange-ball"></div>
@@ -75,6 +117,7 @@ const Services = () => {
         ))}
       </Row>
     </div>
+    </>
   );
 };
 

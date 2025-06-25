@@ -1,4 +1,6 @@
 "use client";
+import Head from "next/head";
+
 import React, { useState } from "react";
 import toast from "react-hot-toast";
 import AlertDismissibleExample from "../components/Alert";
@@ -207,6 +209,46 @@ const handleErrorToast = () => {
 };
 
   return (
+    <>
+    <Head>
+    <title>Contact MSR DevXpert | Full-Stack Web Development Company</title>
+    <meta
+      name="description"
+      content="Get in touch with MSR DevXpert for modern web development solutions. Fill out our contact form, call us, or visit our Kolkata office."
+    />
+    <meta
+      name="keywords"
+      content="Contact MSR DevXpert, Web Development Support, React Developers, Java Developers, Kolkata Software Company"
+    />
+    <meta name="author" content="MSR DevXpert" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    {/* Open Graph Meta */}
+    <meta property="og:title" content="Contact MSR DevXpert" />
+    <meta
+      property="og:description"
+      content="Looking for a reliable tech partner? Contact MSR DevXpert today and let’s build something impactful together."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://msrdevxpert.com/contact" />
+    <meta property="og:image" content="https://msrdevxpert.com/favicon.ico" />
+
+    {/* Twitter Card Meta */}
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Contact MSR DevXpert" />
+    <meta
+      name="twitter:description"
+      content="Get in touch with MSR DevXpert for your digital development needs. Quick response guaranteed."
+    />
+    <meta name="twitter:image" content="https://msrdevxpert.com/favicon.ico" />
+
+    {/* Canonical URL */}
+    <link rel="canonical" href="https://msrdevxpert.com/contact" />
+
+    {/* Favicon */}
+    <link rel="icon" href="/favicon.ico" />
+  </Head>
+
     <section className="contact-section">
       <div className="orange-ball"></div>
       <div className="contact-container">
@@ -354,6 +396,7 @@ const handleErrorToast = () => {
         </div>
       </div>
     </section>
+    </>
   );
 };
 

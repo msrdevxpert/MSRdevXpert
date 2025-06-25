@@ -1,4 +1,6 @@
 "use client";
+import Head from "next/head";
+
 import { useState } from 'react';
 import { Button, Col, Row } from 'react-bootstrap';
 import Form from 'react-bootstrap/Form';
@@ -114,6 +116,46 @@ const handleSubmit = async (e) => {
 
 
   return (
+    <>
+    <Head>
+  <title>Apply Now | MSR DevXpert – Career Opportunities</title>
+  <meta
+    name="description"
+    content="Apply now to join MSR DevXpert. Submit your details and resume to explore exciting career opportunities in full-stack web development."
+  />
+  <meta
+    name="keywords"
+    content="Apply at MSR DevXpert, MSR DevXpert careers, software developer jobs, frontend jobs, backend jobs, full-stack jobs"
+  />
+  <meta name="author" content="MSR DevXpert" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  {/* Open Graph for social previews */}
+  <meta property="og:title" content="Apply Now | MSR DevXpert Careers" />
+  <meta
+    property="og:description"
+    content="Kickstart your career with MSR DevXpert. We’re hiring talented developers, designers, and tech enthusiasts."
+  />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://msrdevxpert.com/apply" />
+  <meta property="og:image" content="https://msrdevxpert.com/favicon.ico" />
+
+  {/* Twitter Card */}
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Apply Now | MSR DevXpert Careers" />
+  <meta
+    name="twitter:description"
+    content="Submit your resume and apply to exciting opportunities at MSR DevXpert."
+  />
+  <meta name="twitter:image" content="https://msrdevxpert.com/favicon.ico" />
+
+  {/* Canonical Link */}
+  <link rel="canonical" href="https://msrdevxpert.com/apply" />
+
+  {/* Favicon */}
+  <link rel="icon" href="/favicon.ico" />
+</Head>
+
     <section className="apply-now-section">
       <div className="orange-ball"></div>
       <div className="apply-now-container">
@@ -212,6 +254,7 @@ const handleSubmit = async (e) => {
         </Form>
       </div>
     </section>
+    </>
   );
 };
 

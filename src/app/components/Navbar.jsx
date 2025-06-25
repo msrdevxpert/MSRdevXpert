@@ -5,7 +5,7 @@ import Link from "next/link";
 import { Drawer, Button, Menu } from 'antd';
 import { MenuOutlined } from '@ant-design/icons';
 import Image from "next/image";
-import logo from "../styles/images/MSR_logo-removebg-preview.png"; // Keep this if inside /public or configured
+import logo from "../styles/images/Logo3 (1).svg"; // Keep this if inside /public or configured
 
 
 const Navbar = () => {
