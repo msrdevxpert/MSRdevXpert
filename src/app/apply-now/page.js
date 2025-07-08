@@ -51,7 +51,7 @@ const ApplyNow = () => {
   const handleFileChange = (e) => {
     const file = e.target.files[0];
     // Check if file size is greater than 50KB
-    if (file && file.size > 202000) {
+    if (file && file.size > 1200000) {
       toast.error("File size exceeds the 200KB limit!");
       return;
     }
