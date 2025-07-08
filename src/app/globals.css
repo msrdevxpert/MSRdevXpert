@@ -196,4 +196,15 @@ body > .footer-container {
 
 
 
+.next-error-h1 {
+  font-size: 7rem !important;
+  font-weight: bold !important;
+  color: #c2a178; /* Custom color */
+}
 
+.layout-container h2{
+  font-size: 1rem !important;
+  font-weight: bold !important;
+  color: #d69c54; /* Custom color */
+  line-height: 119px !important
+}

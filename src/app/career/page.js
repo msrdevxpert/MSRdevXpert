@@ -50,8 +50,8 @@ const Career = () => {
         <section className="career-section">
         {/* Background Blob */}
       <div className="orange-ball"></div>
-            <div className="career-container">
-                <h1 className="gradient-title"><span>Join</span> Our Team</h1>
+            <div className="container ">
+                <h1 className=""><span>Join</span> Our Team</h1>
                 <p className="section-subtitle">Be part of MSR DevXpert and build the future of web development.</p>
 
                 <div className="career-intro">

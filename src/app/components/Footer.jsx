@@ -61,7 +61,7 @@ const Footer = () => {
           <ul className="footer-links">
             <li><a href="/about"><LuArrowRightToLine className="footer-icon"/> About Us</a></li>
             <li><a href="/services"><LuArrowRightToLine className="footer-icon"/> Services</a></li>
-            <li><a href="/careers"><LuArrowRightToLine className="footer-icon"/> Careers</a></li>
+            <li><a href="/career"><LuArrowRightToLine className="footer-icon"/> Careers</a></li>
             <li><a href="/contact"><LuArrowRightToLine className="footer-icon"/> Contact</a></li>
           </ul>
         </Col>

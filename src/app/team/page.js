@@ -48,8 +48,8 @@ const Team = () => {
 
         <section className="team-section">
             <div className="orange-ball"></div>
-            <div className="team-container">
-                <h1 className="gradient-title"><span>Our</span> Team</h1>
+            <div className="container" data-aos="fade-up">
+                <h1 className=""><span>Our</span> Team</h1>
                 <p className="section-subtitle">Meet the brains behind MSR DevXpert</p>
 
                 <div className="team-grid">

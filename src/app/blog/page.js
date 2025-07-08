@@ -47,8 +47,8 @@ const Blog = () => {
         <section className="blog-section">
         {/* Background Blob */}
       <div className="orange-ball"></div>
-            <div className="blog-container">
-                <h1 className="gradient-title"><span>Latest</span> Blog</h1>
+            <div className="container ">
+                <h1 className=""><span>Latest</span> Blog</h1>
                 <p className="section-subtitle">Insights, updates & development tips from our team</p>
 
                 <div className="blog-grid">
