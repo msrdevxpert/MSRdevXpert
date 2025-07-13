@@ -96,7 +96,7 @@ const About = () => {
           <Card className="about-card glass">
             <WorkOutlineIcon
               className="about-icon"
-              style={{ fontSize: "5vh" }}
+              // style={{ fontSize: "5vh" }}
             />
             <h2>How We Work</h2>
             <p>
@@ -111,7 +111,7 @@ const About = () => {
           <Card className="about-card glass">
             <HandshakeOutlinedIcon
               className="about-icon"
-              style={{ fontSize: "5vh" }}
+              // style={{ fontSize: "5vh" }}
             />
             <h2>Our Promise</h2>
             <p>

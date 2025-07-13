@@ -1,5 +1,6 @@
 // app/layout.js or app/layout.jsx
-
+import ContentWithLoader from './components/ContentWithLoader';
+import { LoaderProvider } from './context/LoaderContext';
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import "../app/styles/main.css";
@@ -58,16 +59,20 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
+      {/* <RouteLoader /> */}
+      <LoaderProvider>
         <Layout style={{color:"#d69c54"}}>
         <OrientationLock />
         <ScrollToTop /> {/* Add ScrollToTop component here */}
           <Navbar />
           <div className="layout-container" style={{ padding: "2rem", background: "#f0f2f5", minHeight: "80vh" }}>
-            {children}
+          
+           <ContentWithLoader>{children}</ContentWithLoader>
              <Toaster position="bottom-right" reverseOrder={false} />
             </div>
           <Footer />
         </Layout>
+        </LoaderProvider>
       </body>
     </html>
   );

@@ -13,6 +13,7 @@ import {
   EnvironmentOutlined,
 } from "@ant-design/icons";
 import "../styles/main.css";
+import SmartLink from "./SmartLink";
 
 const Footer = () => {
   const date = new Date();
@@ -59,10 +60,10 @@ const Footer = () => {
         <Col xs={24} md={8} style={{ paddingLeft: "150px" }}>
           <h3 className="footer-title">Quick Links</h3>
           <ul className="footer-links">
-            <li><a href="/about"><LuArrowRightToLine className="footer-icon"/> About Us</a></li>
-            <li><a href="/services"><LuArrowRightToLine className="footer-icon"/> Services</a></li>
-            <li><a href="/career"><LuArrowRightToLine className="footer-icon"/> Careers</a></li>
-            <li><a href="/contact"><LuArrowRightToLine className="footer-icon"/> Contact</a></li>
+            <li><SmartLink href="/about"><LuArrowRightToLine className="footer-icon"/> About Us</SmartLink></li>
+            <li><SmartLink href="/services"><LuArrowRightToLine className="footer-icon"/> Services</SmartLink></li>
+            <li><SmartLink href="/career"><LuArrowRightToLine className="footer-icon"/> Careers</SmartLink></li>
+            <li><SmartLink href="/contact"><LuArrowRightToLine className="footer-icon"/> Contact</SmartLink></li>
           </ul>
         </Col>
 

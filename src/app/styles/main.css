@@ -687,6 +687,10 @@ body {
 .about-card:hover .about-icon {
     color: #13c2c2;
 }
+.about-icon {
+  font-size: 5vh;
+}
+
 
 .about-card {
     border-radius: 16px;

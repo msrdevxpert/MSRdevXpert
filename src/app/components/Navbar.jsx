@@ -2,6 +2,8 @@
 
 import React, { useState } from 'react';
 import Link from "next/link";
+import SmartLink from './SmartLink';
+
 import { Drawer, Button, Menu } from 'antd';
 import { MenuOutlined } from '@ant-design/icons';
 import Image from "next/image";
@@ -30,16 +32,17 @@ const Navbar = () => {
             </div>
 
             {/* Desktop Menu */}
-            <nav className="navbar-menu-desktop">
-                <Link href="/">Home</Link>
-                <Link href="/about">About</Link>
-                <Link href="/services">Services</Link>
-                <Link href="/projects">Projects</Link>
-                <Link href="/team">Team</Link>
-                <Link href="/blog">Blog</Link>
-                <Link href="/career">Career</Link>
-                <Link href="/contact">Contact</Link>
-            </nav>
+          <nav className="navbar-menu-desktop">
+  <SmartLink  href="/" prefetch={false}>Home</SmartLink>
+  <SmartLink  href="/about" prefetch={false}>About</SmartLink>
+  <SmartLink  href="/services" prefetch={false}>Services</SmartLink>
+  <SmartLink  href="/projects" prefetch={false}>Projects</SmartLink>
+  <SmartLink href="/team" prefetch={false}>Team</SmartLink>
+  <SmartLink href="/blog" prefetch={false}>Blog</SmartLink>
+  <SmartLink href="/career" prefetch={false}>Career</SmartLink>
+  <SmartLink href="/contact" prefetch={false}>Contact</SmartLink>
+</nav>
+
 
             {/* Mobile Menu Button */}
             <div className="navbar-menu-mobile">
@@ -55,16 +58,17 @@ const Navbar = () => {
                     onClose={onClose}
                     open={visible}
                 >
-                    <Menu mode="vertical" onClick={onClose}>
-                        <Menu.Item key="home"><Link href="/">Home</Link></Menu.Item>
-                        <Menu.Item key="about"><Link href="/about">About</Link></Menu.Item>
-                        <Menu.Item key="services"><Link href="/services">Services</Link></Menu.Item>
-                        <Menu.Item key="projects"><Link href="/projects">Projects</Link></Menu.Item>
-                        <Menu.Item key="team"><Link href="/team">Team</Link></Menu.Item>
-                        <Menu.Item key="blog"><Link href="/blog">Blog</Link></Menu.Item>
-                        <Menu.Item key="career"><Link href="/career">Career</Link></Menu.Item>
-                        <Menu.Item key="contact"><Link href="/contact">Contact</Link></Menu.Item>
-                    </Menu>
+                   <Menu mode="vertical" onClick={onClose}>
+  <Menu.Item key="home"><SmartLink href="/" prefetch={false}>Home</SmartLink></Menu.Item>
+  <Menu.Item key="about"><SmartLink href="/about" prefetch={false}>About</SmartLink></Menu.Item>
+  <Menu.Item key="services"><SmartLink href="/services" prefetch={false}>Services</SmartLink></Menu.Item>
+  <Menu.Item key="projects"><SmartLink href="/projects" prefetch={false}>Projects</SmartLink></Menu.Item>
+  <Menu.Item key="team"><SmartLink href="/team" prefetch={false}>Team</SmartLink></Menu.Item>
+  <Menu.Item key="blog"><SmartLink href="/blog" prefetch={false}>Blog</SmartLink></Menu.Item>
+  <Menu.Item key="career"><SmartLink href="/career" prefetch={false}>Career</SmartLink></Menu.Item>
+  <Menu.Item key="contact"><SmartLink href="/contact" prefetch={false}>Contact</SmartLink></Menu.Item>
+</Menu>
+
                 </Drawer>
             </div>
         </header>

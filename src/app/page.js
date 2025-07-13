@@ -18,6 +18,8 @@ import Link from "next/link";
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 
+
+
 // IMPORTANT: Use 'tagcloud' (not 'react-tagcloud') for 3D globe effect
 // import TagCloud from "tagcloud";
 
@@ -182,6 +184,9 @@ export default function Home() {
           </Col>
         </Row>
       </section>
+
+
+
 
       {/* Why choose us */}
       <section className="why-us">
